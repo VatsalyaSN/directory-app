@@ -11,13 +11,13 @@ dirAction.addFolder = function(parentId){
     }
 }
 
-dirAction.updateFolderName = function(parentId, childIndex, name){
+dirAction.updateFolderName = function(parentNode, childIndex, name){
     return function(dispatch){
         dispatch({
             type : DIR.UPDATE_NAME,
-            parentId,
             childIndex,
-            name
+            name,
+            parentNode
         })
     }
 }
@@ -31,11 +31,11 @@ dirAction.setCurrentNode = function(node){
     }
 }
 
-dirAction.removeUnnamedFolder = function(parentId, childIndex){
+dirAction.removeUnnamedFolder = function(parentNode, childIndex){
     return function(dispatch){
         dispatch({
             type : DIR.REMOVE_UNNAMED,
-            parentId,
+            parentNode,
             childIndex
         })
     }

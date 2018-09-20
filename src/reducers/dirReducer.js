@@ -35,16 +35,16 @@ export default function (state = {}, action) {
         case DIR.UPDATE_NAME:
             let directoryData = state.directory ? {...state.directory} : undefined;
             path = state.currentDirectory ? state.currentDirectory : []
-            let updatedNode = getCurrentNode(directoryData, action.parentId,path);
+            let updatedNode = action.parentNode;
             if(updatedNode){
                 updatedNode.children[action.childIndex].name = action.name;
                 updatedNode.children[action.childIndex].id = new Date().getUTCMilliseconds();
-                updatedNode.children[action.childIndex].parentId = action.parentId;
+                updatedNode.children[action.childIndex].parentId = updatedNode.id;
                 updatedNode.children[action.childIndex].children = [];
                 delete updatedNode.children[action.childIndex].isNew;
             }
             
-            return {...state, directory : directoryData, currentNode : updatedNode, currentDirectory  : path}
+            return {...state, directory : directoryData, currentNode : updatedNode}
             break;
 
         case DIR.SET_CURRENT_NODE:
@@ -55,8 +55,9 @@ export default function (state = {}, action) {
                 node = state.directory;
                 newPath = []
             }
-            else if(!newPath.includes(node))
+            else if(!newPath.includes(node)){
                 newPath.push(node);
+            }
             else{
                 let index = newPath.indexOf(node);
                 newPath = newPath.slice(0,index+1);
@@ -67,7 +68,7 @@ export default function (state = {}, action) {
 
         case DIR.REMOVE_UNNAMED:
             directoryData = state.directory ? {...state.directory} : undefined;
-            currentNode = getCurrentNode(directoryData, action.parentId, state.currentDirectory);
+            currentNode = action.parentNode;
             currentNode.children.splice(action.childIndex,1);
             return {...state, directory:directoryData  , currentNode : currentNode};
             break;
@@ -77,7 +78,7 @@ export default function (state = {}, action) {
     }
 };
 
-
+//recursive traversal of the directory tree structure for fetching the given node in Preorder traversal
 function getCurrentNode(data, givenId, path){
     if(!data || !data.id){
         return false;

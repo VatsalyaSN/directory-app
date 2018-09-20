@@ -18,7 +18,7 @@ class DirectoryBody extends Component {
 										item.isNew ? 
 										<div className="new-folder" >
 											<img src={ICONS.EMPTY_FOLDER} className="folder-icon" />
-											<input type="text" className="folder-name" ref={folderNameElm => this.folderNameElm = folderNameElm} onKeyPress={this.props.handleUpdateFolderName.bind(this,folder.id,i)} autoFocus="true" onBlur={()=>this.props.handleRemoveUnnamedFolder(this.folderNameElm,folder.id,i)}/>
+											<input type="text" className="folder-name" ref={folderNameElm => this.folderNameElm = folderNameElm} onKeyPress={this.props.handleUpdateFolderName.bind(this,folder,i)} autoFocus="true" onBlur={()=>this.props.handleRemoveUnnamedFolder(this.folderNameElm,folder,i)}/>
 										</div>
 										:
 										<div className="folder" onClick={() =>this.props.setCurrentNode(item)}>

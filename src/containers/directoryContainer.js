@@ -35,10 +35,10 @@ class DirectoryContainer extends Component {
         })
     }
 
-    handleUpdateFolderName = (parentId,childIndex,e) =>{
+    handleUpdateFolderName = (parentNode,childIndex,e) =>{
         if(e.which === 13 && e.key === "Enter"){
             if(e.target.value && e.target.value.length){
-                this.props.updateFolderName(parentId, childIndex, e.target.value);
+                this.props.updateFolderName(parentNode, childIndex, e.target.value);
             }
             else{
                 this.handleFlashMessage("Please provide a name for the new folder","error");
@@ -46,13 +46,13 @@ class DirectoryContainer extends Component {
         }        
     }
 
-    handleRemoveUnnamedFolder = (inputElm,parentId,childIndex) =>{
+    handleRemoveUnnamedFolder = (inputElm,parentNode,childIndex) =>{
         if(inputElm && inputElm.value && inputElm.value.length){
-            this.props.updateFolderName(parentId, childIndex, inputElm.value);
+            this.props.updateFolderName(parentNode, childIndex, inputElm.value);
         }
         else{
             this.handleFlashMessage("Please provide a name for the new folder","error");
-            this.props.removeUnnamedFolder(parentId,childIndex);
+            this.props.removeUnnamedFolder(parentNode,childIndex);
         }
     }
 
