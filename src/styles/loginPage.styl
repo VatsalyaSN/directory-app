@@ -1,0 +1,299 @@
+@font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    src: url('../assets/fonts/Lato/Lato-Regular.ttf'), url('../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    src: url('../assets/fonts/Lato/Lato-Bold.ttf'), url('../assets/fonts/Lato/Lato-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Lato";
+    font-weight: 900;
+    src: url('../assets/fonts/Lato/Lato-Black.ttf'), url('../assets/fonts/Lato/Lato-Black.ttf');
+}
+
+.logo-wrapper{
+    width: calc(100% - 440px);
+    height: 100%;
+    padding: 16px !important;
+}
+
+.login-page-background {
+    background-image: url('/src/assets/images/login/login_bg.jpg');
+    background-position: center;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.login-page {
+    display: block;
+    position: relative;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.color-background {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,160,174,0.8);
+}
+
+.login-page .welcome-header-wrapper {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.welcome-header-wrapper .login-logo {
+    top: unset;
+    transform: unset;
+    margin-right: auto;
+    margin-left: unset;
+    margin-bottom: 20px;
+}
+
+.welcome-header-wrapper .login-section {
+    top: unset;
+    transform: unset;
+}
+
+.welcome-header-wrapper .signup-form .blue-button button {
+    margin-left: unset;
+    margin-right: auto;
+}
+
+.login-page .welcome-header {
+    font-size: 58px;
+    color: #fff;
+    margin: 0;
+    margin-bottom: 14px;
+}
+
+.login-page .welcome-subheader {
+    font-size: 30px;
+    line-height: 36px;
+    color: #fff;
+}
+
+.login-logo {
+    max-width: 360px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.login-section {    
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.login-section .login-input {
+    border: 1.6px solid #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #888888;
+    margin: auto;
+}
+
+.login-input .header {
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    float: left;
+    position: relative;
+    margin: 0;
+}
+
+.login-input .sub-header {
+    width: 100%;
+    display: block;
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    float: left;
+    margin: 0 0 22px 0;
+}
+
+.login-input-box input:focus {
+    box-shadow: none;
+}
+
+.login-input .login-input-box {
+    height: auto;
+    display: block;
+    position: relative;
+    float: left;
+    background-color: rgba(255,255,255,0.36);
+    border-radius: 4px;
+    border: 0;
+    padding: 0;
+    margin-bottom: 14px;
+}
+
+.signup-form .login-input-box {
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.signup-form .login-input-box input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.34);
+}
+
+.signup-form label {
+    color: #fff;
+}
+
+.signup-form .indicates-required {
+    width: 100%;
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.login-input-box .image {
+    width: 42px;
+    height: 42px;
+    display: block;
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+.login-input-box input {
+    color: #fff;
+    width: calc(100% - 42px);
+    height: 42px;
+    border: 0;
+    float: left;
+    background-color: transparent;
+}
+
+.login-button {
+    padding-right: 4px;
+}
+
+.signup-button {
+    padding-left: 4px;
+}
+
+.login-input-box .login-button button {
+    height: 42px;
+}
+
+.login-button > button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.forgot-password-button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.forgot-password-button button {
+    font-size: 16px;
+    display: block;
+    color: #fff;
+    margin: auto;
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+}
+
+.forgot-password-button button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.login-section-wrapper {
+    display: block;
+    position: relative;
+    float: right;
+    width: 440px;
+    height: 100%;
+    padding: 20px 70px;
+}
+
+.blue-button button {
+    font-weight: 700;
+    color: #00A0AE;
+    width: 100%;
+    height: 42px;
+    padding: 6px 12px;
+    background-color: #fff;
+    border: 0px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+    font-size: 16px;
+}
+
+.login-input-box input::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.login-input-box input:-ms-input-placeholder {
+    color: #fff;
+}
+
+.login-input-box input::-ms-input-placeholder {
+    color: #fff;
+}
+
+.signup-form .login-section-wrapper {
+    width: 580px;
+    padding: 20px 40px;
+}
+
+.signup-form .logo-wrapper {
+    width: calc(100% - 580px);
+}
+
+.signup-form .login-input .sub-header {
+    margin: 0 0 10px 0;
+}
+
+.signup-form .blue-button button {
+    width: auto;
+    min-width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.signup-form .row {
+    margin-right: 0px;
+    margin-left: 0px;
+    float: left;
+}
+
+.signup-form .row .login-input-box:first-child {
+    padding-right: 6px;
+}
+
+.signup-form .row .login-input-box:last-child {
+    padding-left: 6px;
+}
+
+.thankyou-page .logo-wrapper {
+    width: 100%;
+}

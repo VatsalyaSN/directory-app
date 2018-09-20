@@ -1,0 +1,13 @@
+.idea
+.project
+bin
+node_modules
+emailNode/auth/*
+emailNode/tmp/*
+emailNode/emailFields.txt
+npm-debug.log
+*.sublime-project
+*.sublime-workspace
+
+.env
+.envoriginal

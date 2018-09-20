@@ -1,0 +1,476 @@
+.top-bar{
+	background-color #010a28;
+	height 60px;
+	display block;
+	box-shadow 0px 1px 2px rgba(0,0,0,0.6);
+    z-index 9;
+    padding 0 30px
+}
+
+.logo-wrapper{
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+.logo-wrapper img{
+    height 30px
+    margin-top 15px
+}
+
+.ham {
+	width:50px;
+	height: 50px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFF;
+    padding: 12px;
+    &:hover{
+        cursor:pointer;
+    };
+}
+
+.img-link{
+	width: 200px;
+}
+
+.bot-btn-wrapper .bot-btn {
+    width: 100%;
+    float: left;
+    display: block;
+    position:relative;
+    min-width: 200px;
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.user-detail-wrapper, .tutorial-div{
+    display: block;
+    float: right;
+    padding: 5px 10px 5px 0;
+    right: 0;
+    position: relative;
+    margin-right: 4px;
+}
+
+.menu-expanded .user-detail-wrapper {
+    padding: 0;
+}
+
+.tutorial-div {
+    margin: 0;
+}
+
+.tutorial-div .icon{
+    margin: 6px 0px;
+}
+
+.tutorial-div a {
+    display: block;
+    float: left;
+}
+
+.tutorial-div h5 {
+    float: left;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 4px;
+}
+
+.user-detail-wrapper {
+    width: 100%;
+    margin-right: 0;
+}
+
+.user-detail-wrapper .user-detail{
+    width: 100%;
+    padding: 14px 6px 14px 14px;    
+    top: 0;
+    display: block;
+    min-width: 180px;
+    background-color: #fff;
+    float: left;
+}
+
+.user-detail-wrapper .profile-icon {
+    background-color: #DFDFDF;
+    border-radius: 50px;
+}
+
+.user-detail-wrapper .profile-icon .image {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+}
+
+.bot-list{
+	width: 230px;
+    max-height: 200px;
+    position: absolute;
+    z-index: 1000000;
+    border:1px solid #c0c0c0 ;
+    border-radius: 0.5em;
+    overflow-y: scroll;
+}
+
+.botname-div{
+	display: inline-block;
+}
+
+.icon-plus{
+	width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+.botname {
+    width: calc(100% - 84px);
+    height: 100%;
+    padding: 11px 8px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-name{
+	margin: 0px;
+    padding: 9px 10px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    float: left;
+    // text-transform: capitalize;
+}
+
+.dropdown-btn, .name-popup{
+    background-color: #fff;
+    width: 150px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1000000;
+    color: #f00;
+    cursor: pointer;
+	right: 4px;
+    box-shadow: 0px 2px 14px rgba(0,0,0,0.5);
+}
+
+.settings-icon{
+	//background-color: black;
+}
+
+.bot-btn-wrapper {
+    width: 100%;
+    display: block;
+    float: left;
+    background-color: #00a0ae;
+    padding: 0 10px;
+}
+
+.bot-list .arrow-up {
+    width: 0;
+    height: 0;
+    display: none;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    left: 12px;
+    top: -10px;
+}
+
+.dropdown-btn .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    right: 9px;
+    top: -10px;
+}
+
+.arrow-left{
+    width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  margin-top: 10px;
+  border-right: 10px solid #4285f4; 
+}
+
+.name-popup .arrow-left{
+    position: absolute;
+    left: -8px;
+    border-right: 10px solid #fff;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.name-popup{
+    display: none;
+    left: 55px;
+    background-color: #fff;
+    color: #fff;
+    padding: 8px 10px;
+    width: 126px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.name-popup p{
+    color: #333;
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.dropdown-btn .image {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    padding: 9px;
+    margin: 0;
+}
+
+.dropdown-btn p {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.settings-icon  a {
+	display: block;
+	float: left;
+}
+
+.settings-icon a .icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    padding: 6px;
+    margin: 0;
+}
+
+.dropdown-icon .icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    padding: 18px;
+    margin: 0;
+}
+
+.dropdown-icon {
+	padding: 0;
+}
+
+.menu-icon {
+    padding: 11px 11px;
+}   
+
+.product-logo {
+    display: block;
+    position: relative;
+    height: auto;
+    float: left;
+}
+
+.product-logo > a > img {
+    max-width: 40px;
+    height: auto;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 4px;
+}
+
+.product-logo > a > span {
+    padding: 6px 0px;
+    line-height: 24px;
+    font-size: 20px;
+    font-family: 'SourceSansPro-Light', 'sans-serif';
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.bot-list {
+    width: 230px;
+    max-height: 200px;
+    position: absolute;
+    z-index: 1000000;
+    overflow: visible;
+    border: 0px;
+    background-color: #F0F0F0;
+    border-image: initial;
+    border-radius: 4px;
+    box-shadow: 0px 8px 14px rgba(0,0,0,0.3);
+    top: 0px;
+    left: 0px;
+}
+
+.bot-list .agent-list-dropdown  {
+    padding: 0;
+    margin: 0;
+}
+
+.bot-list .agent-list-wrapper  {
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+.bot-list .agent-list-wrapper .header-text .text {
+    margin: 0;
+    padding: 10px 14px;
+    width: calc(100% - 40px);
+    float: left;
+}
+
+.bot-list .agent-list-wrapper .dropup-icon {
+    display: block;
+    float: left;
+    position: relative;
+    padding: 8px;
+}
+
+.top-bar .agent-save-button-wrapper {
+    display: block;
+    float: left;
+    padding: 7px 0;
+    margin-right: 12px;
+}
+
+.top-bar .agent-save-button {
+    height: 32px;
+    float: left;
+    margin: 0px;
+    border-radius: 3px;
+    padding: 6px 12px;
+    outline: none;
+    border: 0px;
+    font-size: 14px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+    &:hover {
+        background-color: rgb(46, 203, 152);
+    color: #fff;
+    font-weight: 600;
+    }
+}
+
+.top-bar .vertical-line {
+    width: 2px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #fff;
+    float: left;
+    position: relative;
+    margin-left: 16px;
+    margin-right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.top-bar .circle-divider {
+    width: 4px;
+    height: 4px;
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    float: left;
+    margin-left: 12px;s
+    margin-right: 12px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.top-bar .page-title {
+    display: block;
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+.top-bar .page-title h1 {
+    display: block;
+    float: left;
+    position: relative;
+    color: #fff;
+    font-size: 18px;
+    line-height: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 4px 0;
+    height: 100%;
+}
+
+.bot-btn .dropdown-icon .icon, .bot-btn .settings-icon a .icon {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    display: block;
+    padding: 9px;
+    margin: 0;
+    float: left;
+}
+
+.profile-icon {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.profile-icon .image {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    display: block;
+    position: relative;
+}
+
+.dropdown-btn {
+    top: 38px;
+    right: 0;
+    width: 120px;
+}
+
+.dropdown-btn .dropdown-item {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+    color: #000;
+}
+
+.dropdown-btn .dropdown-list {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.Select-menu-outer .Select-option.is-selected {
+    color: #ffffff;
+    background-color : #00a0ae;
+}

@@ -1,0 +1,75 @@
+
+.float-buttons-panel {
+    width: 72px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    padding: 0px;
+}
+
+.float-buttons {
+    width: 100%;
+    display: block;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+.float-button {
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    &:hover {
+        .button-title {
+            display: block;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+    }
+}
+
+.float-button.help-button a {
+    background-color: #00a0ae;
+}
+
+.float-button a {
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    background-color: #2878fa;
+    border-radius: 100px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+    &:hover {
+        background-color: #2878fa;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+    }
+}
+
+.float-button .image {
+    position: relative;
+    display: block;
+}
+
+.float-button .button-title {
+    display: none;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 10px;
+    background: #010e28;
+    border-radius: 3px;
+    width: 85px;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+}
+
+.train-btn-status{
+    display: block;
+    text-align: left;
+    font-size: 10px;
+    text-transform: capitalize;
+}
