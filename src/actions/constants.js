@@ -1,10 +1,8 @@
-let constants = {};
+/*
+    This folder contains action type definitions and can be used to store other constants needed in the action/reducer files
+*/
 
-constants.PAGE = {
-    LIST_SIZE: 15,
-    LIST_SET: "list_set_page",
-    TOGGLE_MENU : "toggle_menu"
-};
+let constants = {};
 
 constants.DIR = {
     ADD_FOLDER : "add new folder",

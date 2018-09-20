@@ -1,7 +1,4 @@
-import axios from "axios";
 import {DIR} from "./constants"; 
-// import {setToStorage, getFromStorage , removeFromStorage} from "./userSessionInfo";
-import {browserHistory} from "react-router";
 
 let dirAction = {};
 

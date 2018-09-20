@@ -25,5 +25,3 @@ class InboxView extends Component {
 }
 
 export default InboxView;
-
-// export default Email;

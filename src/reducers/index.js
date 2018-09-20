@@ -1,6 +1,4 @@
 import {combineReducers} from "redux";
-
-import {browserHistory} from "react-router";
 import {routerReducer} from 'react-router-redux';
 import directoryReducer from "./dirReducer";
 

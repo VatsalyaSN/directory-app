@@ -1,3 +1,7 @@
+/*
+    All the icons, images, route names are defined in this file
+*/
+
 export const ICONS = {
     LOGO: '/src/assets/images/playment_logo_dark.svg',
     NEW_FOLDER : '/src/assets/images/new_folder.svg',
@@ -14,19 +18,4 @@ export const BW_ICONS = {
 export const COLOR_ICONS = {
     
 };
-
-export const NAMES = {
-    PROFILE: 'Profile',
-    RESETPASSWORD: 'Reset Password',
-    LOGOUT: 'Logout',
-    EMAIL : 'Inbox',
-    MEETINGS : 'Scheduled Meetings',
-    TEMPLATES : 'Templates'
-};
-
-export const ROUTES = {
-    INBOX : '/inbox',
-};
-
-
 

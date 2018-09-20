@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {Link} from "react-router";
-import {ICONS, NAMES, ROUTES} from "../constants";
+import {ICONS} from "../constants";
 
 class FloatButtonsPanel extends Component {
 
@@ -9,15 +8,13 @@ class FloatButtonsPanel extends Component {
     }
 
     render() {
-        const {section } = this.props;
-
         return (
             <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1 float-buttons-panel">
                 <div className="float-buttons">
                     <div className="float-button" onClick={()=>this.props.addFolder(this.props.currentNode.id)}>
-                        <Link to={ROUTES.NEW_EMAIL}>
+                        <a>
                             <img className="image" src={ICONS.NEW_FOLDER}/>
-                        </Link>
+                        </a>
                         <span className="button-title">
                             New Folder
                         </span>
