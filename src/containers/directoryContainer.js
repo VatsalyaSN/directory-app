@@ -35,25 +35,44 @@ class DirectoryContainer extends Component {
         })
     }
 
+    //checks if a file with duplicate name exists
+    checkForDuplicate = (node, value) =>{
+        if(node && node.children && node.children.length > 1){
+            let isDuplicatePresent = true;
+            for(let j=0;j<node.children.length;j++){
+                if(node.children[j].name === value){
+                    isDuplicatePresent = false;
+                    break
+                }
+            }
+            return isDuplicatePresent
+        }
+        else{
+            return true;
+        }
+        
+    }
+
     handleUpdateFolderName = (parentNode,childIndex,e) =>{
-        if(e.which === 13 && e.key === "Enter"){
-            if(e.target.value && e.target.value.length){
-                this.props.updateFolderName(parentNode, childIndex, e.target.value);
+        if((e.which === 13 && e.key === "Enter") || (e && !e.key)){
+            let value = (e.which === 13 && e.key === "Enter") ? e.target.value : e.value;
+            if(value && value.length){
+                if(this.checkForDuplicate(parentNode,value)){
+                    this.props.updateFolderName(parentNode, childIndex, value);
+                }
+                else{
+                    value = `${value}_(${new Date().getUTCMilliseconds()})`;
+                    this.props.updateFolderName(parentNode, childIndex, value);
+                }
             }
             else{
                 this.handleFlashMessage("Please provide a name for the new folder","error");
+                !(e.which === 13 && e.key === "Enter") ? 
+                    this.props.removeUnnamedFolder(parentNode,childIndex)
+                    :
+                    ""
             }
         }        
-    }
-
-    handleRemoveUnnamedFolder = (inputElm,parentNode,childIndex) =>{
-        if(inputElm && inputElm.value && inputElm.value.length){
-            this.props.updateFolderName(parentNode, childIndex, inputElm.value);
-        }
-        else{
-            this.handleFlashMessage("Please provide a name for the new folder","error");
-            this.props.removeUnnamedFolder(parentNode,childIndex);
-        }
     }
 
     render(){
@@ -63,7 +82,7 @@ class DirectoryContainer extends Component {
                 <div ref={ errorElm => this.flashError = errorElm} id="flash-error"></div>
                 <DirectoryPWD currentDirectory={this.state.currentDirectory} setCurrentNode={this.props.setCurrentNode} />
                 <DirectoryHeader />
-                <DirectoryBody folder={this.state.currentNode} handleUpdateFolderName={this.handleUpdateFolderName} setCurrentNode={this.props.setCurrentNode} handleRemoveUnnamedFolder={this.handleRemoveUnnamedFolder}/>
+                <DirectoryBody folder={this.state.currentNode} handleUpdateFolderName={this.handleUpdateFolderName} setCurrentNode={this.props.setCurrentNode} />
             </div>
         )
     }

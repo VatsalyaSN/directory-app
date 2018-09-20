@@ -6,7 +6,6 @@ export default function (state = {}, action) {
         case DIR.ADD_FOLDER :
             let dirData = state.directory ? {...state.directory} : undefined;
             let currentNode = {};
-            let path = state.currentDirectory ? state.currentDirectory : []
             
             if(!dirData){
                 let id= new Date().getUTCMilliseconds();
@@ -22,19 +21,17 @@ export default function (state = {}, action) {
                 currentNode = dirData;
             }
             
-            else if(dirData && action.parentId){
-                currentNode = getCurrentNode(dirData,action.parentId, path);                
+            else if(dirData && action.parentNode){
+                currentNode = action.parentNode;
                 currentNode.children.push({
                     "isNew" : true
                 })     
             }
-            
-            return {...state, directory : dirData, currentNode : currentNode, currentDirectory : path};
+            return {...state, directory : dirData, currentNode : currentNode};
             break;
 
         case DIR.UPDATE_NAME:
             let directoryData = state.directory ? {...state.directory} : undefined;
-            path = state.currentDirectory ? state.currentDirectory : []
             let updatedNode = action.parentNode;
             if(updatedNode){
                 updatedNode.children[action.childIndex].name = action.name;
@@ -77,39 +74,3 @@ export default function (state = {}, action) {
             return state;
     }
 };
-
-//recursive traversal of the directory tree structure for fetching the given node in Preorder traversal
-function getCurrentNode(data, givenId, path){
-    if(!data || !data.id){
-        return false;
-    }
-    
-    let currentNode = data;
-    if(currentNode && currentNode.name && currentNode.name !== "root")
-        path.push(currentNode);
-
-    if(data.id === givenId){
-        return data;
-    }
-
-    let resultVal = 0;
-
-    if(data.children && data.children.length){
-        for(let x=0;x<data.children.length;x++){
-            resultVal = getCurrentNode(data.children[x], givenId, path);
-            path.pop();    
-            if(resultVal){
-                return resultVal;
-            }
-        }
-            
-    }
-    
-    if(!resultVal)
-    {
-        return false;
-    }  
-    else{
-        return resultVal
-    }  
-}

@@ -2,11 +2,11 @@ import {DIR} from "./constants";
 
 let dirAction = {};
 
-dirAction.addFolder = function(parentId){
+dirAction.addFolder = function(parentNode){
     return function(dispatch){
         dispatch({
             type : DIR.ADD_FOLDER,
-            parentId
+            parentNode
         })
     }
 }

@@ -11,7 +11,7 @@ class FloatButtonsPanel extends Component {
         return (
             <div className="col-lg-1 col-md-1 col-sm-1 col-xs-1 float-buttons-panel">
                 <div className="float-buttons">
-                    <div className="float-button" onClick={()=>this.props.addFolder(this.props.currentNode.id)}>
+                    <div className="float-button" onClick={()=>this.props.addFolder(this.props.currentNode)}>
                         <a>
                             <img className="image" src={ICONS.NEW_FOLDER}/>
                         </a>
