@@ -1,26 +1,31 @@
 .body-wrapper{
     width 78%
+    height 100%
+}
+
+.dir-column-wrapper{
+    height 100%
 }
 
 #flash-success,#flash-error{
     border: 1px solid #037a43;
     background-color: #cdffc6;
     padding: 8px;
-    border-radius: .3em;
+    border-radius: 2px;
     color: #057a3a;
     margin-left: 38%;
     display: none;
     z-index: 9999;
-    top: 0px;
-    font-weight: 600;
+    top: 5px;
+    font-weight: 500;
     max-width:400px;
     position:absolute;
 }
 
 #flash-error{
-    border: 1px solid #ff444b;
-    background-color: #ffc6c9;
-    color: #99282d;
+    border: 1px solid #f3999c;
+    background-color: #f7d5d7;
+    color: #c34449;
 }
 
 .pwd-wrapper{
@@ -55,3 +60,42 @@
         color: #868686;
     }
 }
+
+.dir-display-wrapper{
+    padding 0 15px 15px
+    height 100%
+
+    .folder-icon{
+        margin-right 10px
+        float left
+    }
+
+    .new-folder, .folder{
+        padding: 15px 10px;
+        border-bottom: 1px solid #ccc;
+
+        input{
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            padding 5px
+        }
+    }
+}
+
+.new-folder .folder-icon{
+    padding-top 3px
+}
+
+.no-folder{
+    position: relative;
+    height: 100%;
+
+    span{
+        top: 25%;
+        left: 50%;
+        position: relative;
+        float: left;
+        transform: translate(-50%, -50%);
+    }
+}
+

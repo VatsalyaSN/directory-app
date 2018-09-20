@@ -8,21 +8,27 @@ class DirectoryBody extends Component {
     render(){
 		const {folder} = this.props;
         return(
-			<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+			<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 dir-display-wrapper">
                 {
-					folder && folder.children ? 
+					folder && folder.children && folder.children.length ? 
 						folder.children.map((item,i) =>{
 							return(
 								<div key={i}>
 									{
 										item.isNew ? 
 										<div className="new-folder" >
-											<img src={ICONS.FOLDER} />
-											<input type="text" className="folder-name" onKeyPress={this.props.handleupdateFolderName.bind(this,folder.id,i)}/>
+											<img src={ICONS.EMPTY_FOLDER} className="folder-icon" />
+											<input type="text" className="folder-name" onKeyPress={this.props.handleUpdateFolderName.bind(this,folder.id,i)} autoFocus="true" onBlur={()=>this.props.removeUnnamedFolder(folder.id,i)}/>
 										</div>
 										:
 										<div className="folder" onClick={() =>this.props.setCurrentNode(item)}>
-											<img src={ICONS.FOLDER} />
+											{
+												item.children && item.children.length > 0? 
+												<img src={ICONS.FOLDER} className="folder-icon" />
+												:
+												<img src={ICONS.EMPTY_FOLDER} className="folder-icon" />
+											}
+											
 											<span className="folder-name">{item.name}</span>
 										</div>
 									}
@@ -30,7 +36,11 @@ class DirectoryBody extends Component {
 							)
 						})
 						:
-						<div>No folders</div>
+						<div className="no-folder">
+							<span>
+							This folder is empty
+							</span>
+						</div>
 				}
 			</div>
 		)

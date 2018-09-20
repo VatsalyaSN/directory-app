@@ -4,6 +4,7 @@ export const ICONS = {
     HOME : '/src/assets/images/home.png',
     NEXT_ARROW : '/src/assets/images/next_arrow.png',
     FOLDER : '/src/assets/images/folder.png',
+    EMPTY_FOLDER : '/src/assets/images/empty_folder.png',
 };
 
 export const BW_ICONS = {

@@ -28,7 +28,6 @@ class DirectoryContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
         this.setState({
             currentDirectory : nextProps.currentDirectory,
             directory : nextProps.directory,
@@ -36,21 +35,25 @@ class DirectoryContainer extends Component {
         })
     }
 
-    handleupdateFolderName = (parentId,childIndex,e) =>{
+    handleUpdateFolderName = (parentId,childIndex,e) =>{
         if(e.which === 13 && e.key === "Enter"){
-            this.props.updateFolderName(parentId, childIndex, e.target.value);
-        }
-        
+            if(e.target.value && e.target.value.length){
+                this.props.updateFolderName(parentId, childIndex, e.target.value);
+            }
+            else{
+                this.handleFlashMessage("Please provide a name for the new folder","error");
+            }
+        }        
     }
 
     render(){
         return(
             <div className="col-lg-12 col-md-12 col-sm-12 dir-column-wrapper padding-none">
-                <div ref={successElm => this.flashSuccess = successElm} id="flash-success">Refreshed ES successfully!</div>
-                <div ref={ errorElm => this.flashError = errorElm} id="flash-error">Error!</div>
+                <div ref={successElm => this.flashSuccess = successElm} id="flash-success"></div>
+                <div ref={ errorElm => this.flashError = errorElm} id="flash-error"></div>
                 <DirectoryPWD currentDirectory={this.state.currentDirectory} setCurrentNode={this.props.setCurrentNode} />
                 <DirectoryHeader />
-                <DirectoryBody folder={this.state.currentNode} handleupdateFolderName={this.handleupdateFolderName} setCurrentNode={this.props.setCurrentNode}/>
+                <DirectoryBody folder={this.state.currentNode} handleUpdateFolderName={this.handleUpdateFolderName} setCurrentNode={this.props.setCurrentNode} removeUnnamedFolder={this.props.removeUnnamedFolder}/>
             </div>
         )
     }

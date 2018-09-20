@@ -49,14 +49,20 @@ export default function (state = {}, action) {
 
         case DIR.SET_CURRENT_NODE:
             let newPath = state.currentDirectory ? state.currentDirectory : [];
-            if(!newPath.includes(action.node))
-                newPath.push(action.node);
+            let node = action.node;
+
+            if(action.node === "root"){
+                node = state.directory;
+                newPath = []
+            }
+            else if(!newPath.includes(node))
+                newPath.push(node);
             else{
-                let index = newPath.indexOf(action.node);
+                let index = newPath.indexOf(node);
                 newPath = newPath.slice(0,index+1);
             }
-                
-            return {...state, currentNode : action.node, currentDirectory : newPath}
+
+            return {...state, currentNode : node, currentDirectory : newPath}
 
         default:
             return state;

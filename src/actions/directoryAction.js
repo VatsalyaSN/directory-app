@@ -35,4 +35,14 @@ dirAction.setCurrentNode = function(node){
     }
 }
 
+dirAction.removeUnnamedFolder = function(parentId, childIndex){
+    return function(dispatch){
+        dispatch({
+            type : DIR.REMOVE_UNNAMED,
+            parentId,
+            childIndex
+        })
+    }
+}
+
 module.exports = dirAction;
