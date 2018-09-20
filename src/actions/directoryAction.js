@@ -15,7 +15,6 @@ dirAction.addFolder = function(parentId){
 }
 
 dirAction.updateFolderName = function(parentId, childIndex, name){
-    console.log(parentId,childIndex);
     return function(dispatch){
         dispatch({
             type : DIR.UPDATE_NAME,

@@ -46,6 +46,16 @@ class DirectoryContainer extends Component {
         }        
     }
 
+    handleRemoveUnnamedFolder = (inputElm,parentId,childIndex) =>{
+        if(inputElm && inputElm.value && inputElm.value.length){
+            this.props.updateFolderName(parentId, childIndex, inputElm.value);
+        }
+        else{
+            this.handleFlashMessage("Please provide a name for the new folder","error");
+            this.props.removeUnnamedFolder(parentId,childIndex);
+        }
+    }
+
     render(){
         return(
             <div className="col-lg-12 col-md-12 col-sm-12 dir-column-wrapper padding-none">
@@ -53,7 +63,7 @@ class DirectoryContainer extends Component {
                 <div ref={ errorElm => this.flashError = errorElm} id="flash-error"></div>
                 <DirectoryPWD currentDirectory={this.state.currentDirectory} setCurrentNode={this.props.setCurrentNode} />
                 <DirectoryHeader />
-                <DirectoryBody folder={this.state.currentNode} handleUpdateFolderName={this.handleUpdateFolderName} setCurrentNode={this.props.setCurrentNode} removeUnnamedFolder={this.props.removeUnnamedFolder}/>
+                <DirectoryBody folder={this.state.currentNode} handleUpdateFolderName={this.handleUpdateFolderName} setCurrentNode={this.props.setCurrentNode} handleRemoveUnnamedFolder={this.handleRemoveUnnamedFolder}/>
             </div>
         )
     }

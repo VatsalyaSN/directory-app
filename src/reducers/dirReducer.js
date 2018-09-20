@@ -62,7 +62,15 @@ export default function (state = {}, action) {
                 newPath = newPath.slice(0,index+1);
             }
 
-            return {...state, currentNode : node, currentDirectory : newPath}
+            return {...state, currentNode : node, currentDirectory : newPath};
+            break;
+
+        case DIR.REMOVE_UNNAMED:
+            directoryData = state.directory ? {...state.directory} : undefined;
+            currentNode = getCurrentNode(directoryData, action.parentId, state.currentDirectory);
+            currentNode.children.splice(action.childIndex,1);
+            return {...state, directory:directoryData  , currentNode : currentNode};
+            break;
 
         default:
             return state;
@@ -70,7 +78,7 @@ export default function (state = {}, action) {
 };
 
 
-function getCurrentNode(data, parentId, path){
+function getCurrentNode(data, givenId, path){
     if(!data || !data.id){
         return false;
     }
@@ -79,7 +87,7 @@ function getCurrentNode(data, parentId, path){
     if(currentNode && currentNode.name && currentNode.name !== "root")
         path.push(currentNode);
 
-    if(data.id === parentId){
+    if(data.id === givenId){
         return data;
     }
 
@@ -87,7 +95,7 @@ function getCurrentNode(data, parentId, path){
 
     if(data.children && data.children.length){
         for(let x=0;x<data.children.length;x++){
-            resultVal = getCurrentNode(data.children[x], parentId, path);
+            resultVal = getCurrentNode(data.children[x], givenId, path);
             path.pop();    
             if(resultVal){
                 return resultVal;

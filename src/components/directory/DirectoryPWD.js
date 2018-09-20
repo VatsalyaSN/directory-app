@@ -10,7 +10,7 @@ class DirectoryPWD extends Component {
         if(pwdDisplay && pwdDisplay.length && pwdDisplay[0].name ==="root"){
             pwdDisplay.splice(0,1);
         }
-        console.log(pwdDisplay);
+        
         return(
 			<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pwd-wrapper">
                 <Link className="pwd-subwrapper" onClick={()=>this.props.setCurrentNode("root")}>
